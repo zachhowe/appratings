@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/appratings"
+
+argc = ARGV.count
+
+if argc >= 1
+  cmd = ARGV.shift
+
+  if cmd.eql? "ratings"
+    ARGV.each do |app_id|
+      puts "Fetching info for app with ID: #{app_id}"
+      info = AppRatings::RatingFetcher.fetch_info(app_id)
+
+      app_name = info['trackName']
+      app_version = info['version']
+
+      puts "Found app: #{app_name} (#{app_version})"
+      puts
+      puts "Fetching ratings for: #{app_name}"
+
+      ratings = AppRatings::RatingFetcher.fetch_ratings(app_id)
+
+      if !ratings[:total].empty? && !ratings[:version].empty?
+        all_r = (AppRatings::RatingUtil.weighted_mean(ratings[:total]) * 100).round(3)
+        cur_r = (AppRatings::RatingUtil.weighted_mean(ratings[:version]) * 100).round(3)
+
+        puts "- All Ratings: #{all_r}%"
+        puts "- Current Version (#{app_version}) Ratings: #{cur_r}%"
+      else
+        puts "Error: got empty ratings from iTunes for app: #{app_name}"
+      end
+
+      puts
+    end
+  end
+end

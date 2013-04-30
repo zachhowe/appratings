@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = AppRatings::VERSION
   spec.authors       = ["Zach Howe"]
   spec.email         = ["zach@zachhowe.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Fetches iOS app store ratings}
+  spec.summary       = %q{Fetches iOS app store ratings}
+  spec.homepage      = "https://github.com/zachhowe/appratings"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

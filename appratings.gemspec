@@ -5,7 +5,7 @@ require 'appratings/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "appratings"
-  spec.version       = Appratings::VERSION
+  spec.version       = AppRatings::VERSION
   spec.authors       = ["Zach Howe"]
   spec.email         = ["zach@zachhowe.com"]
   spec.description   = %q{TODO: Write a gem description}
@@ -20,4 +20,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "nokogiri", "~> 1.5.6"
+  spec.add_development_dependency "json", "~> 1.7.6"
 end

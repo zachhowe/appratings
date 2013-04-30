@@ -1,4 +1,4 @@
-# Appratings
+# AppRatings
 
 TODO: Write a gem description
 

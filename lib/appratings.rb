@@ -1,5 +1,6 @@
 require "appratings/version"
+require "appratings/ratingfetcher"
+require "appratings/ratingutil"
 
-module Appratings
-  # Your code goes here...
+module AppRatings
 end
